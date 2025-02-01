@@ -3,43 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Profile - Elder Care</title>
+    <title>Profile Page</title>
     <link rel="stylesheet" href="profile.css">
-    <script defer src="profile.js"></script>
 </head>
 <body>
-    <div class="profile-container">
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <h2>Elder Nest</h2>
-            <ul>
-                <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="medsupply.html">Medicine Supply</a></li>
-                <li><a href="#">Emergency Contacts</a></li>
-                <li><a href="profile.html">Profile</a></li> <!-- Link to Profile -->
-            </ul>
-        </aside>
+    <!-- Main content area -->
+    <div class="main-content">
+        <!-- Welcome Header -->
+        <header>
+            <h1>Welcome to Your Profile</h1>
+        </header>
 
-        <!-- Main Content -->
-        <main class="main-content">
-            <header>
-                <h1>User Profile</h1>
-            </header>
+        <!-- Personal Information Section -->
+        <div class="personal-info-tab">
+            <h2>Personal Information</h2>
+            <div class="profile-info">
+                <p><strong>Name:</strong> John Doe</p>
+                <p><strong>Age:</strong> 30</p>
+                <p><strong>Gender:</strong> Male</p>
+                <p><strong>Location:</strong> New York, USA</p>
+            </div>
+        </div>
 
-            <!-- Profile Section -->
-            <section class="profile-info">
-                <div class="profile-header">
-                    <img src="user-image.jpg" alt="User Image" class="user-image"> <!-- User Image -->
-                    <h2>John Doe</h2> <!-- User Name -->
-                </div>
-                <div class="profile-details">
-                    <p><strong>Age:</strong> 65</p>
-                    <p><strong>Weight:</strong> 75 kg</p>
-                    <p><strong>Height:</strong> 170 cm</p>
-                    <p><strong>Medical Conditions:</strong> Hypertension, Diabetes</p>
-                </div>
-            </section>
-        </main>
+        <!-- Emergency Button -->
+        <div class="emergency-section">
+            <button class="emergency-btn">Emergency Contact Form</button>
+        </div>
+
+        <!-- View Checkup Details Button -->
+        <div class="checkup-section">
+            <button class="checkup-btn">View Checkup Details</button>
+        </div>
     </div>
+
 </body>
 </html>

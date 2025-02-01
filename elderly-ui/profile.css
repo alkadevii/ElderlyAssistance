@@ -1,101 +1,121 @@
-/* Basic styling for the profile page */
+/* profile.css */
+
+/* Set the background image for the entire page */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+    background-image: url('bckgrnd.png'); /* Change this to your image path */
+    background-size: cover;  /* Ensures the image covers the entire page */
+    background-position: center center;  /* Centers the image */
+    background-repeat: no-repeat;  /* Prevents the image from repeating */
+    margin: 0;  /* Removes default margin */
+    padding: 0;  /* Removes default padding */
+    height: 100vh;  /* Ensures the page height fills the screen */
 }
 
-/* Profile container with flexbox */
-.profile-container {
-    display: flex;
-    height: 100vh; /* Full screen height */
-}
-
-/* Sidebar */
-.sidebar {
-    width: 250px;
-    background: #4CAF50;
-    color: white;
-    padding: 20px;
-}
-
-.sidebar h2 {
-    text-align: center;
-}
-
-.sidebar ul {
-    list-style: none;
-    padding: 0;
-}
-
-.sidebar ul li {
-    padding: 10px;
-}
-
-.sidebar ul li a {
-    color: white;
-    text-decoration: none;
-    display: block;
-    padding: 10px;
-}
-
-.sidebar ul li a:hover {
-    background: #45a049;
-}
-
-/* Main Content */
+/* Optional: You can add styles for your main content */
 .main-content {
-    flex-grow: 1;
     padding: 20px;
-    background-color: #fff;
-    margin-left: 20px; /* Space between sidebar and profile */
+    color: white;  /* Optional: Change text color to white for contrast */
 }
 
-/* Header */
-header {
-    background: #fff;
+/* Additional section styling (Optional) */
+.personal-info-tab, .emergency-section, .checkup-section {
+    background-color: rgba(0, 0, 0, 0.5);  /* Semi-transparent background for readability */
     padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Your other existing styles in profile.css */
+
+
+/* Main content area */
+.main-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styling */
+header h1 {
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 36px;
+    color: #333;
 }
 
-/* Profile Section */
-.profile-info {
-    background: white;
+/* Personal Information Section */
+.personal-info-tab {
+    background-color: #fafafa;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.personal-info-tab h2 {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+}
+
+.profile-info {
+    font-size: 18px;
+    color: #555;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.profile-info p {
+    margin: 5px 0;
+}
+
+/* Emergency Button Section */
+.emergency-section {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.emergency-btn {
+    background-color: #e53e3e;
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Makes the button full width */
+    max-width: 300px; /* Optional: Set a maximum width */
+    margin: 10px 0;
+}
+
+.emergency-btn:hover {
+    background-color: #c53030;
+}
+
+/* View Checkup Details Button Section */
+.checkup-section {
     text-align: center;
     margin-top: 20px;
 }
 
-/* Profile Header (Image and Name) */
-.profile-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.user-image {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
-}
-
-.profile-header h2 {
-    margin: 0;
-    font-size: 24px;
-}
-
-/* Profile Details */
-.profile-details p {
+.checkup-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 30px;
     font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Makes the button full width */
+    max-width: 300px; /* Optional: Set a maximum width */
     margin: 10px 0;
 }
 
-.profile-details strong {
-    font-weight: bold;
+.checkup-btn:hover {
+    background-color: #388e3c;
 }

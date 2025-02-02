@@ -1,33 +1,33 @@
-# [Project Name] 🎯
+# Elder-Nest 🎯
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: Tech Mania
 
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+- Member 1: Alka Devi - LBS Institute of Technology for Women
+- Member 2: Aditi B S - LBS Institute of Technology for Women
+- Member 3: Asamsa B M - LBS Institute of Technology for Women
 
 ### Hosted Project Link
 [mention your project hosted project link here]
 
 ### Project Description
-[2-3 lines about what your project does]
+This app connects elderly residents in Kerala with essential services like food delivery, medicine delivery, and transportation assistance, while creating part-time job opportunities for local youth, including college students. By providing a simple, accessible platform, it bridges the gap between seniors' needs and the community's workforce, improving both quality of life and economic opportunities
 
 ### The Problem statement
-[What ridiculous problem are you solving?]
+We’re solving the problem of elderly residents in Kerala being stranded without basic services like food delivery, medicine, and transportation, while young adults and college students struggle to find part-time jobs. The ridiculousness lies in the fact that two groups—vulnerable seniors and unemployed youth—are disconnected, when they could be seamlessly helping each other through a simple, community-driven app. It’s a win-win that turns isolation and unemployment into opportunity and care.
 
 ### The Solution
-[How are you solving it? Keep it fun!]
+We’re creating a super-simple, all-in-one mobile app that connects elderly residents with the services they need while giving local youth a chance to earn and make a difference. It’s like matchmaking—but for food delivery, medicine, and transportation! Seniors can easily order meals, medicine, or book a ride, and college students can sign up to be their go-to helpers. No more missed meals or forgotten meds, and no more long job hunts for college students. The app is their one-stop-shop for care, convenience, and community! Plus, it’s designed to be so easy that even tech-shy seniors can use it with ease. Everyone wins! 🙌
 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
+- HTML,CSS
+- Fakestore API
+- bcrypt,
 - [Tools used]
 
 For Hardware:

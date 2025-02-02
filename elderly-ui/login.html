@@ -15,7 +15,7 @@
 
         /* Full-screen background */
         body {
-            background: url('images/login-bg.jpg') no-repeat center center fixed;
+            background-color: #95a8af;
             background-size: cover;
             height: 100vh;
             display: flex;
@@ -65,7 +65,7 @@
         .login-btn {
             width: 100%;
             padding: 15px;
-            background: #007bff;
+            background-color: #95a8af;
             color: white;
             border: none;
             border-radius: 8px;
@@ -84,7 +84,7 @@
         }
 
         .login-btn:hover {
-            background: #0056b3;
+            background-color: #95a8af;
             transform: scale(1.05);
         }
 
@@ -103,10 +103,47 @@
 
     <div class="login-container">
         <h2>Welcome</h2>
-        <input type="text" class="input-box" placeholder="Username">
-        <input type="password" class="input-box" placeholder="Password">
-        <button class="login-btn">Login <span>➡️</span></button>
+        <input type="text" class="input-box" id="username" placeholder="Username">
+        <input type="password" class="input-box" id="password" placeholder="Password">
+        <button class="login-btn" onclick="login()">Login <span>➡️</span></button>
     </div>
+
+    <script>
+        function login() {
+            // Get values from input fields
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Send login request
+            fetch('https://fakestoreapi.com/auth/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    username: username,
+                    password: password
+                })
+            })
+            .then(res => res.json())
+            .then(json => {
+                // Log the response or handle it as needed
+                console.log(json);
+                // Example: Show an alert or redirect on successful login
+                if (json.token) {
+                    alert('Login successful!');
+                    // Redirect to profile.html if login is successful
+                    window.location.href = 'profile.html'; 
+                } else {
+                    alert('Invalid credentials!');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Something went wrong. Please try again later.');
+            });
+        }
+    </script>
 
 </body>
 </html>

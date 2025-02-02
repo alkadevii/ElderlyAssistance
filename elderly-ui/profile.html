@@ -5,36 +5,293 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Page</title>
     <link rel="stylesheet" href="profile.css">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Philosopher&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Modal Style */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border-radius: 8px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal-content h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .modal-content p {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        /* Profile Name Styling */
+        #profile-name {
+            font-family: 'Philosopher', sans-serif;
+            font-size: 2em;
+            color: #333;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #carousel-container {
+    max-height: 300px; /* Adjust height as needed */
+    overflow-y: auto; /* Enables vertical scrolling */
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+        /* Animated Card Style */
+        .contact-card, .timeline-item {
+            background-color: #f1f1f1;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s forwards;
+        }
+
+        .contact-card:nth-child(even), .timeline-item:nth-child(even) {
+            animation-delay: 0.2s;
+        }
+
+        .contact-card:nth-child(odd), .timeline-item:nth-child(odd) {
+            animation-delay: 0.4s;
+        }
+
+        .add-contact-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #95a8af;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.add-contact-btn i {
+    margin-right: 5px;
+}
+
+.add-contact-btn:hover {
+    background-color: #95a8af;
+}
+
+
+        /* Keyframes for Fade In Animation */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Close Button Style */
+        .close {
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            float: right;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+    </style>
 </head>
 <body>
-    <!-- Main content area -->
-    <div class="main-content">
-        <!-- Welcome Header -->
-        <header>
-            <h1>Welcome to Your Profile</h1>
-        </header>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>Elder Nest</h2>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="#">Messages</a></li>
+                <li><a href="#">My Contacts</a></li>
+                <li><a href="#" id="emergency-contact-btn">Emergency Contact</a></li>
+                <li><a href="#" id="checkup-details-btn">View Checkup Details</a></li> <!-- New Button -->
+            </ul>
+        </div>
 
-        <!-- Personal Information Section -->
-        <div class="personal-info-tab">
-            <h2>Personal Information</h2>
-            <div class="profile-info">
-                <p><strong>Name:</strong> John Doe</p>
-                <p><strong>Age:</strong> 30</p>
-                <p><strong>Gender:</strong> Male</p>
-                <p><strong>Location:</strong> New York, USA</p>
+        <!-- Main Content -->
+        <div class="main-content">
+            <header>
+                <h1 id="profile-name">Loading...</h1>
+            </header>
+
+            <div class="profile-container">
+                <!-- Profile Image -->
+                <div class="profile-image">
+                    <img src="images/profile.jpg" alt="Profile Image" id="profile-img">
+                </div>
+
+                <!-- Profile Details -->
+                <div class="profile-info">
+                    <p><strong>Phone:</strong> <span id="profile-phone">Loading...</span></p>
+                    <p><strong>Email:</strong> <span id="profile-email">Loading...</span></p>
+                    <p><strong>Address:</strong> <span id="profile-address">Loading...</span></p>
+                    <p><strong>Website:</strong> <span id="profile-website">www.jeremyrose.com</span></p>
+
+                    <div class="extra-info">
+                        <h3>Additional Information</h3>
+                        <p><strong>Medical Condition:</strong> Hypertension (mild)</p>
+                        <p><strong>Personality Traits:</strong> Friendly, Outgoing, Detail-Oriented</p>
+                        <p><strong>Other Notes:</strong> Enjoys outdoor activities and reading books.</p>
+                    </div>
+                    <div class="buttons">
+                        <button class="blue-btn" id="update-btn">Update Profile</button>
+                    </div>
+
+                </div>
             </div>
-        </div>
-
-        <!-- Emergency Button -->
-        <div class="emergency-section">
-            <button class="emergency-btn">Emergency Contact Form</button>
-        </div>
-
-        <!-- View Checkup Details Button -->
-        <div class="checkup-section">
-            <button class="checkup-btn">View Checkup Details</button>
         </div>
     </div>
 
+    <!-- Emergency Contact Modal (Carousel) -->
+    <div id="emergency-contact-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-emergency-modal" class="close">&times;</span>
+            <h2>Emergency Contacts</h2>
+            <div id="carousel-container">
+                <!-- Carousel content will be added dynamically here -->
+            </div>
+            <button id="add-emergency-contact" class="add-contact-btn">
+                <i class="fa fa-plus"></i> Add Contact
+            </button>
+        </div>
+    </div>
+
+    <!-- Checkup Details Modal (Timeline) -->
+    <div id="checkup-details-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-checkup-modal" class="close">&times;</span>
+            <h2>Checkup Timeline</h2>
+            <div id="timeline-container">
+                <!-- Timeline content will be added dynamically here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Fetch user data from API and update profile information
+        fetch('https://fakestoreapi.com/users/1')
+            .then(res => res.json())
+            .then(json => {
+                document.getElementById('profile-name').textContent = json.name.firstname + " " + json.name.lastname;
+                document.getElementById('profile-phone').textContent = json.phone;
+                document.getElementById('profile-email').textContent = json.email;
+                document.getElementById('profile-address').textContent = `${json.address.street}, ${json.address.city}, ${json.address.zipcode}`;
+                document.getElementById('profile-img').src = "images/profile.jpg"; // Change this if you have a profile image from the API
+            })
+            .catch(error => console.log('Error fetching data:', error));
+
+        // Modal functionality for Emergency Contact
+        const emergencyContactBtn = document.getElementById('emergency-contact-btn');
+        const emergencyModal = document.getElementById('emergency-contact-modal');
+        const closeEmergencyModal = document.getElementById('close-emergency-modal');
+
+        emergencyContactBtn.onclick = function() {
+            fetchEmergencyContacts();
+            emergencyModal.style.display = "block";
+        };
+
+        closeEmergencyModal.onclick = function() {
+            emergencyModal.style.display = "none";
+        };
+
+        // Modal functionality for Checkup Details
+        const checkupDetailsBtn = document.getElementById('checkup-details-btn');
+        const checkupModal = document.getElementById('checkup-details-modal');
+        const closeCheckupModal = document.getElementById('close-checkup-modal');
+
+        checkupDetailsBtn.onclick = function() {
+            fetchCheckupDetails();
+            checkupModal.style.display = "block";
+        };
+
+        closeCheckupModal.onclick = function() {
+            checkupModal.style.display = "none";
+        };
+
+        // Close modal if clicked outside modal content
+        window.onclick = function(event) {
+            if (event.target == emergencyModal || event.target == checkupModal) {
+                emergencyModal.style.display = "none";
+                checkupModal.style.display = "none";
+            }
+        };
+
+        // Fetch emergency contacts and display in a carousel
+        function fetchEmergencyContacts() {
+            fetch('https://fakestoreapi.com/users')
+                .then(res => res.json())
+                .then(json => {
+                    const carouselContainer = document.getElementById('carousel-container');
+                    carouselContainer.innerHTML = "";
+                    json.forEach(user => {
+                        const contactElement = document.createElement('div');
+                        contactElement.classList.add('contact-card');
+                        contactElement.innerHTML = `
+                            <p><strong>Name:</strong> ${user.name.firstname} ${user.name.lastname}</p>
+                            <p><strong>Phone:</strong> ${user.phone}</p>
+                        `;
+                        carouselContainer.appendChild(contactElement);
+                    });
+                })
+                .catch(error => console.log('Error fetching emergency contacts:', error));
+        }
+
+        // Fetch checkup details and display in a timeline
+        function fetchCheckupDetails() {
+            const timelineData = [
+                { date: "2023-01-15", event: "Checkup - Initial consultation" },
+                { date: "2023-03-10", event: "Checkup - Blood test" },
+                { date: "2023-05-22", event: "Checkup - Follow-up consultation" }
+            ];
+
+            const timelineContainer = document.getElementById('timeline-container');
+            timelineContainer.innerHTML = "";
+
+            timelineData.forEach(item => {
+                const timelineItem = document.createElement('div');
+                timelineItem.classList.add('timeline-item');
+                timelineItem.innerHTML = `
+                    <p><strong>Date:</strong> ${item.date}</p>
+                    <p><strong>Event:</strong> ${item.event}</p>
+                `;
+                timelineContainer.appendChild(timelineItem);
+            });
+        }
+
+    </script>
 </body>
 </html>

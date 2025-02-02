@@ -11,7 +11,7 @@
 - Member 3: Asamsa B M - LBS Institute of Technology for Women
 
 ### Hosted Project Link
-[mention your project hosted project link here]
+https://elderly-assistance-nbnp.vercel.app/
 
 ### Project Description
 This app connects elderly residents in Kerala with essential services like food delivery, medicine delivery, and transportation assistance, while creating part-time job opportunities for local youth, including college students. By providing a simple, accessible platform, it bridges the gap between seniors' needs and the community's workforce, improving both quality of life and economic opportunities
@@ -28,12 +28,7 @@ For Software:
 - HTML,CSS
 - Fakestore API
 - bcrypt,
-- [Tools used]
 
-For Hardware:
-- [List main components]
-- [List specifications]
-- [List tools required]
 
 ### Implementation
 For Software:
@@ -47,18 +42,18 @@ For Software:
 For Software:
 
 # Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+![alt text](image.png) - This is the page which contains the user profile. Once the user is 
+logged in he/she will be able to access details and update, such as emergency contact, and medical checkup details.
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+![Screenshot2]![alt text](image-1.png)
+*This page handles the medicine purchase and cart management.
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+![Screenshot3]![alt text](image-2.png)
+this page manages payment information like cardholder name, number, expiry date, and cvv
 
 # Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
+![Workflow]![alt text](image-3.png)
+This workflow illustrates the step-by-step process a user follows in the Elderly Assistance App, starting from logging in to viewing the dashboard. It begins with a simple login procedure, followed by access to the user's profile where they can view and update their details. The user can then proceed to purchase medicines by searching, selecting, and adding items to the cart. After reviewing the cart, the payment process is initiated, and once successful, the user receives an order confirmation and is redirected to the dashboard. The dashboard serves as a central hub, where users can track active orders, receive health reminders, and access their profile for any updates. This streamlined workflow ensures easy navigation and accessibility, tailored to the needs of elderly users.
 
 For Hardware:
 
@@ -91,9 +86,9 @@ For Hardware:
 [Add any extra demo materials/links]
 
 ## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+- Alka Devi : idea, development
+- Asamsa B M: idea, development
+- Aditi B S: idea, development
 
 ---
 Made with ❤️ at TinkerHub

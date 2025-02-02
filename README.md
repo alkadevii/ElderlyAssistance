@@ -27,7 +27,7 @@ We’re creating a super-simple, all-in-one mobile app that connects elderly res
 For Software:
 - HTML,CSS
 - Fakestore API
-- bcrypt,
+- bcrypt, fetchAPI
 
 
 ### Implementation
@@ -79,8 +79,12 @@ For Hardware:
 
 ### Project Demo
 # Video
-[Add your demo video link here]
-*Explain what the video demonstrates*
+https://vimeo.com/1052686079/4bfd70b180?share=copy
+In the video, we demonstrated the functionality of the Elderly Assistance Web App. It showcases how a user can smoothly navigate through the app, starting from the login screen, where they authenticate their access. Once logged in, the user can view and update their profile, ensuring their information is up-to-date.
+
+The video also highlights how users can browse available medicines, select items to add to their cart, and proceed with the payment process securely. After completing the payment, the app confirms the order and directs users to the dashboard, which acts as a central hub for tracking ongoing orders, managing reminders, and accessing their personalized services.
+
+Overall, the demo emphasizes the app’s ease of use, ensuring elderly users can complete essential tasks like purchasing medicines and managing their health-related needs with minimal effort and maximum convenience.
 
 # Additional Demos
 [Add any extra demo materials/links]
